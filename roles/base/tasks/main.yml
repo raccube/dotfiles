@@ -1,0 +1,13 @@
+---
+- name: Install packages
+  package:
+    name: {{ item }}
+    state: present
+  loop:
+    - vim
+    - git
+
+- name: Copy vimrc
+  copy:
+    src: vimrc
+    dest: ~/.vimrc

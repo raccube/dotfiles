@@ -1,0 +1,11 @@
+---
+- name: Install zsh
+  package:
+    name: zsh
+    state: present
+  when: ansible_os_family != 'Darwin'
+
+- name: Copy zshrc
+  copy:
+    src: zshrc
+    dest: ~/.zshrc

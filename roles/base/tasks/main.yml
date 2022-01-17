@@ -4,6 +4,7 @@
     name:
       - vim
       - git
+      - fzf
     state: present
 
 - name: Copy vimrc

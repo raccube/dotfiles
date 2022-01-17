@@ -14,7 +14,6 @@ fi
 #endregion
 
 #region Plugins
-
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zdharma-continuum/fast-syntax-highlighting
 antigen bundle gem
@@ -68,4 +67,4 @@ function uart {
 PROMPT="%F{red}%m%>>%f %2~%F{blue}\${vcs_info_msg_0_}%f
 $(_p_sc)%# "
 
-eval "$(rbenv init -)"
+command -v rbenv &>/dev/null && eval "$(rbenv init -)"

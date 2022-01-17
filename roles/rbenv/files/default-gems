@@ -1,0 +1,4 @@
+bundler
+rake
+rubocop
+rt_rubocop_defaults

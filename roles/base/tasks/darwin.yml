@@ -1,6 +1,6 @@
 ---
 - name: Install applications
-  package:
+  homebrew_cask:
     name:
       - element
       - telegram

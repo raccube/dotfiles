@@ -7,5 +7,5 @@
 
 - name: Copy zshrc
   copy:
-    src: zshrc
+    src: zshrc.zsh
     dest: ~/.zshrc

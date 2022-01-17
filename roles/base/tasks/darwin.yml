@@ -1,0 +1,19 @@
+---
+- name: Install applications
+  package:
+    name:
+      - element
+      - telegram
+      - iterm2
+      - jetbrains-toolbox
+
+- name: Copy iTerm2 configuration
+  copy:
+    src: darwin/com.googlecode.iterm2.plist
+    dest: ~/Library/Preferences/com.googlecode.iterm2.plist
+
+- name: Install Iosevka fonts
+  unarchive:
+    src: https://github.com/be5invis/Iosevka/releases/download/v11.2.6/ttf-iosevka-ss07-11.2.6.zip
+    dest: ~/Library/Fonts
+    remote_src: yes

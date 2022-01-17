@@ -1,13 +1,14 @@
 ---
 - name: Install packages
   package:
-    name: {{ item }}
+    name:
+      - vim
+      - git
     state: present
-  loop:
-    - vim
-    - git
 
 - name: Copy vimrc
   copy:
     src: vimrc
     dest: ~/.vimrc
+
+- include_tasks: "{{ ansible_os_family | lower }}.yml"

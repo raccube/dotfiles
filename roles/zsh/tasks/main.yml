@@ -5,6 +5,11 @@
     state: present
   when: ansible_os_family != 'Darwin'
 
+- name: Install antigen
+  package:
+    name: antigen
+    state: present
+
 - name: Copy zshrc
   copy:
     src: zshrc.zsh

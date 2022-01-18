@@ -6,6 +6,7 @@
       - telegram
       - iterm2
       - jetbrains-toolbox
+      - 1password
     state: present
 
 - name: Copy iTerm2 configuration

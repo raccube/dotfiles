@@ -5,6 +5,7 @@
       - vim
       - git
       - fzf
+      - ripgrep
     state: present
 
 - name: Copy vimrc

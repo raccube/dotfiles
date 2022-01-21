@@ -35,3 +35,15 @@
 - name: "Set ruby {{ rbenv.default_ruby }} as default"
   shell: |-
     $SHELL -lc "~/.rbenv/bin/rbenv global {{ rbenv.default_ruby }} && ~/.rbenv/bin/rbenv rehash"
+
+- name: Check if ~/.zshrc directory exists
+  stat:
+    path: "~/.zshrc.d"
+  register: zshrc_dir
+
+- name: "Enable Ruby-related ZSH plugins"
+  copy:
+    src: "ruby.zsh"
+    dest: "~/.zshrc.d/ruby.zsh"
+  when: zshrc_dir.stat.exists
+

@@ -18,9 +18,6 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zdharma-continuum/fast-syntax-highlighting
 antigen bundle gem
 antigen bundle git
-antigen bundle ruby
-antigen bundle rbenv
-antigen bundle rails
 antigen bundle sudo
 antigen bundle z
 

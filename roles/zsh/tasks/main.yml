@@ -14,3 +14,9 @@
   copy:
     src: zshrc.zsh
     dest: ~/.zshrc
+
+- name: Create ~/.zshrc.d directory
+  file:
+    path: ~/.zshrc.d
+    state: directory
+

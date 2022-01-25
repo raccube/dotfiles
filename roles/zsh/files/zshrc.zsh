@@ -13,6 +13,10 @@ else
 fi
 #endregion
 
+for file in ~/.zshrc.d/*.zsh; do
+  source "$file"
+done
+
 #region Plugins
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zdharma-continuum/fast-syntax-highlighting
@@ -64,4 +68,3 @@ function uart {
 PROMPT="%F{red}%m%>>%f %2~%F{blue}\${vcs_info_msg_0_}%f
 $(_p_sc)%# "
 
-command -v rbenv &>/dev/null && eval "$(rbenv init -)"

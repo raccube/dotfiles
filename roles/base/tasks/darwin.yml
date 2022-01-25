@@ -7,6 +7,7 @@
       - iterm2
       - jetbrains-toolbox
       - 1password
+      - rectangle
     state: present
 
 - name: Copy iTerm2 configuration
@@ -19,3 +20,46 @@
     src: https://github.com/be5invis/Iosevka/releases/download/v11.2.6/ttf-iosevka-ss07-11.2.6.zip
     dest: ~/Library/Fonts
     remote_src: yes
+
+- name: Turn off auto-correction
+  community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: NSAutomaticSpellingCorrectionEnabled
+    type: bool
+    value: false
+
+- name: Enable Safari Develop menu
+  community.general.osx_defaults:
+    domain: com.apple.Safari
+    key: IncludeDevelopMenu
+    type: bool
+    value: true
+
+- name: Set Safari's default search engine to DuckDuckGo
+  community.general.osx_defaults:
+    domain: com.apple.Safari
+    key: SearchProviderShortName
+    type: string
+    value: DuckDuckGo
+
+- name: Enable compact tab layout in Safari
+  community.general.osx_defaults:
+    domain: com.apple.Safari
+    key: ShowStandaloneTabBar
+    type: bool
+    value: false
+
+- name: Enable key repeat for Terminals and Editors
+  community.general.osx_defaults:
+    domain: "{{ item }}"
+    key: ApplePressAndHoldEnabled
+    type: bool
+    value: false
+  loop:
+  - com.googlecode.iTerm2
+  - com.apple.Terminal
+  - com.apple.dt.Xcode
+  - com.jetbrains.rubymine
+  - com.jetbrains.phpstorm
+  - com.jetbrains.pycharm
+

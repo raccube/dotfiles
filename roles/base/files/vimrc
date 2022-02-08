@@ -7,3 +7,7 @@ set ts=4 sw=4 sts=4
 
 " Autocomplete in command mode (Tab to invoke)
 set wildmenu
+
+" Allow backspace to remove everything in INSERT mode
+set backspace=indent,eol,start
+

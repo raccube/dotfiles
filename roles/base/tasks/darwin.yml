@@ -30,6 +30,13 @@
 
 - name: Enable Safari Develop menu
   community.general.osx_defaults:
+    domain: NSGlobalDomain
+    key: NSWindowShouldDragOnGesture
+    type: bool
+    value: true
+
+- name: Enable Safari Develop menu
+  community.general.osx_defaults:
     domain: com.apple.Safari
     key: IncludeDevelopMenu
     type: bool
